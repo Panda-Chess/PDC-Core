@@ -16,7 +16,7 @@ jobs:
       - run: npm ci
       - run: npm test
 
-  release:
+  publish-gpr:
     permissions:
       packages: write
       contents: write
