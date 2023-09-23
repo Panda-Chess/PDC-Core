@@ -27,7 +27,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20.7.0
-          registry-url: https://github.com/Panda-Chess/PDC-Core
+          registry-url: https://npm.pkg.github.com/
       - run: npm ci
       - run: npx semantic-release
         env:
