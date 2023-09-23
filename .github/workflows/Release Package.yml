@@ -13,8 +13,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20.7.0
-      - run: npm ci
-      - run: npm test
+      - run: yarn install 
+      - run: yarn test
 
   publish-gpr:
     permissions:
@@ -30,8 +30,8 @@ jobs:
         with:
           node-version: 20.7.0
           registry-url: https://npm.pkg.github.com/
-      - run: npm ci
-      - run: npx semantic-release
+      - run: yarn install
+      - run: yarn semantic-release
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN }}

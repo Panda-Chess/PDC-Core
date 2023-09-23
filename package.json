@@ -11,6 +11,7 @@
     "url": "https://github.com/Panda-Chess/PDC-Core"
   },
   "scripts": {
+    "semantic-release": "semantic-release",
     "test": "exit 0"
   },
   "author": "",
