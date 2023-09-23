@@ -1,4 +1,5 @@
 {
+    "repositoryUrl": "https://github.com/Panda-Chess/PDC-Core",
     "branches": ["main"],
     "plugins": [
       "@semantic-release/commit-analyzer",
