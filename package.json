@@ -6,6 +6,10 @@
   "publishConfig": {
     "@Panda-Chess:registry": "https://npm.pkg.github.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Panda-Chess/PDC-Core"
+  },
   "scripts": {
     "test": "exit 0"
   },
