@@ -16,14 +16,14 @@ jobs:
       - run: npm ci
       - run: npm test
 
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
+  release:
     permissions:
       packages: write
-      contents: read
+      contents: write
       pull-requests: write
       issues: write
+    needs: build
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
