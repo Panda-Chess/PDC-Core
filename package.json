@@ -11,6 +11,7 @@
     "url": "https://github.com/Panda-Chess/PDC-Core"
   },
   "scripts": {
+    "commit": "git add . && git-cz",
     "semantic-release": "semantic-release",
     "test": "exit 0"
   },
@@ -20,7 +21,7 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^9.0.6",
-    "semantic-release": "^22.0.4",
-    "yarn": "^1.22.19"
+    "git-cz": "^4.9.0",
+    "semantic-release": "^22.0.4"
   }
 }
