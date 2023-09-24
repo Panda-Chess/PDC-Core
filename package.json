@@ -2,7 +2,7 @@
   "name": "@panda-chess/pdc-core",
   "version": "v0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "publishConfig": {
     "@Panda-Chess:registry": "https://npm.pkg.github.com"
   },
@@ -11,6 +11,7 @@
     "url": "https://github.com/Panda-Chess/PDC-Core"
   },
   "scripts": {
+    "build": "tsc",
     "push": "git add . && git-cz && git push",
     "semantic-release": "semantic-release",
     "test": "exit 0"
@@ -21,7 +22,9 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^9.0.6",
+    "@types/node": "^20.6.4",
     "git-cz": "^4.9.0",
-    "semantic-release": "^22.0.4"
+    "semantic-release": "^22.0.4",
+    "typescript": "^5.2.2"
   }
 }
