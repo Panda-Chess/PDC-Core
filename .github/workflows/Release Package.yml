@@ -31,6 +31,7 @@ jobs:
           node-version: 20.7.0
           registry-url: https://npm.pkg.github.com/
       - run: yarn install
+      - run: yarn build
       - run: yarn semantic-release
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN }}
