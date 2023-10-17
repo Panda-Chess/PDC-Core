@@ -11,8 +11,9 @@
     "url": "https://github.com/Panda-Chess/PDC-Core"
   },
   "scripts": {
+    "start": "nodemon 'src/index.ts'",
     "build": "tsc",
-    "push": "git add . && git-cz && git push",
+    "push": "git add . && git-cz && git pull && git push",
     "semantic-release": "semantic-release",
     "test": "exit 0"
   },
@@ -23,8 +24,14 @@
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^9.0.6",
     "@types/node": "^20.6.4",
+    "@types/uuid": "^9.0.5",
     "git-cz": "^4.9.0",
+    "nodemon": "^3.0.1",
     "semantic-release": "^22.0.4",
+    "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "uuid": "^9.0.1"
   }
 }
