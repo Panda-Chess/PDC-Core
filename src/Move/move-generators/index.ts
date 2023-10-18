@@ -1,5 +1,5 @@
-import { Piece, Position } from "../Piece/piece-manager.service";
-import { generatePawnMoves } from "./move-generators/pawn-move.generator/pawn-move.generator";
+import { Piece, Position } from "../../Piece/piece-manager.service";
+import { generatePawnMoves } from "./pawn-move.generator/pawn-move.generator";
 
 export interface Move {
   from: Piece;

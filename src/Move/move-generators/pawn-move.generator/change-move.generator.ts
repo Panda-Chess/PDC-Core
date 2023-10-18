@@ -1,5 +1,5 @@
 import { Piece, PieceType } from "../../../Piece/piece-manager.service";
-import { Move } from "../../move-generator.srvice";
+import { Move } from "../../move-generators";
 
 export const getChangePawn = (piece: Piece, pieces: Piece[], increment: number): Move[] => {
     const moves: Move[] = [];

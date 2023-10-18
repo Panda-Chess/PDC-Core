@@ -1,5 +1,5 @@
 import { Piece } from "../../../Piece/piece-manager.service";
-import { Move, findPieceFrom } from "../../move-generator.srvice";
+import { Move, findPieceFrom } from "../../move-generators";
 
 export const getSimpleMove = (piece: Piece, pieces: Piece[], increment: number): Move | void => {
     const firstStep = findPieceFrom({ x: piece.position.x, y: piece.position.y + increment }, pieces);
