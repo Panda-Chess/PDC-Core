@@ -15,7 +15,8 @@
     "build": "tsc",
     "push": "git add . && git-cz && git pull && git push",
     "semantic-release": "semantic-release",
-    "test": "exit 0"
+    "test": "exit 0",
+    "lint": "eslint ./src --ext .ts --fix"
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +26,10 @@
     "@semantic-release/github": "^9.0.6",
     "@types/node": "^20.6.4",
     "@types/uuid": "^9.0.5",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
+    "eslint": "^8.51.0",
+    "eslint-plugin-react": "^7.33.2",
     "git-cz": "^4.9.0",
     "nodemon": "^3.0.1",
     "semantic-release": "^22.0.4",
