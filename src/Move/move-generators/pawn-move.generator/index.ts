@@ -1,0 +1,1 @@
+export { generatePawnMoves } from "./pawn-move.generator";

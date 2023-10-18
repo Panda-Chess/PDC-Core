@@ -13,7 +13,7 @@
   "scripts": {
     "start": "nodemon 'src/index.ts'",
     "build": "tsc",
-    "push": "git add . && git-cz && git pull && git push",
+    "push": "yarn lint && git add . && git-cz && git pull && git push",
     "semantic-release": "semantic-release",
     "test": "exit 0",
     "lint": "eslint ./src --ext .ts --fix"

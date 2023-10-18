@@ -49,6 +49,14 @@ module.exports = {
                 "ignoreRegExpLiterals": true
             }
         ],	
+        "max-lines": [
+            "error",
+            {
+                "max": 150,
+                "skipBlankLines": true,
+                "skipComments": true
+            }
+        ],
         "indent": [
             "error",
             4

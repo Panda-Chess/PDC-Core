@@ -1,0 +1,1 @@
+export { generateRookMoves } from "./rook-move.generator";
