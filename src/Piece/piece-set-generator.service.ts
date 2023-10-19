@@ -4,8 +4,8 @@ import { Piece } from "./piece-manager.service";
 
 export const generatePieceSet = (): Piece[] => {
 
-    return [
-        ...generateWhitePieceSet(),
-        ...generateBlackPieceSet(),
-    ];
+  return [
+    ...generateWhitePieceSet(),
+    ...generateBlackPieceSet(),
+  ];
 };
