@@ -1,1 +1,1 @@
-export { generatePawnMoves } from "./pawn-move.generator";
+export {generatePawnMoves} from "./pawn-move.generator";

@@ -1,0 +1,1 @@
+export {generateKnightMoves} from "./knight-move.generator";

@@ -11,9 +11,17 @@
   },
   "plugins": ["@typescript-eslint"],
   "rules": {
-    "indent": ["error", 2],
+    "indent": ["error", 4],
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
+    "object-curly-newline": [
+      "error",
+      {
+        "minProperties": 4,
+        "multiline": true,
+        "consistent": true
+      }
+    ],
     "max-len": [
       "error",
       {
@@ -32,12 +40,10 @@
         "skipComments": true
       }
     ],
-    "max-lines-per-function": [
+    "max-statements": [
       "error",
       {
-        "max": 20,
-        "skipBlankLines": true,
-        "skipComments": true
+        "max": 15
       }
     ]
   }
