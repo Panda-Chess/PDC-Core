@@ -1,10 +1,14 @@
-import {Move, findPieceFrom, isPositionValid} from "..";
-import {Piece, Position} from "../../../Piece/piece-manager.service";
+import {Move, findPieceFrom, isPositionValid} from ".";
+import {Piece, Position} from "../../Piece/piece-manager.service";
 
-export const getMovesLeftUp = (piece: Piece, pieces: Piece[]): Move[] => {
+export const getCommonMoves = (piece: Piece, pieces: Piece[], displacement: Position): Move[] => {
     const moves: Move[] = [];
 
-    const nextPosition: Position = {x: piece.position.x - 1, y: piece.position.y - 1};
+    const nextPosition: Position = {
+        x: piece.position.x + displacement.x,
+        y: piece.position.y + displacement.y
+    };
+
     while(isPositionValid(nextPosition)){
         const nextPiecePosition = findPieceFrom(nextPosition, pieces);
         if(nextPiecePosition && nextPiecePosition.color !== nextPiecePosition.color){
@@ -18,8 +22,8 @@ export const getMovesLeftUp = (piece: Piece, pieces: Piece[]): Move[] => {
 
         moves.push({from: piece, to: {...piece, position: nextPosition}});
 
-        nextPosition.x--;
-        nextPosition.y--;
+        nextPosition.x += displacement.x;
+        nextPosition.y += displacement.y;
     }
 
     return moves;

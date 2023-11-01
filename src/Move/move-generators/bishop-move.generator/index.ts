@@ -1,0 +1,1 @@
+export {generateBishopMoves} from "./bishop-move.generator";

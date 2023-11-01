@@ -1,0 +1,1 @@
+export { generateQueenMoves } from "./queen-move.generator";
