@@ -10,22 +10,22 @@ export const generateKnightMoves = (piece: Piece, pieces: Piece[]): Move[] =>{
 
     const upMoves = getMovesUp(piece, pieces);
     if(upMoves.length){
-        moves.push(...upMoves);
+        moves.push(...upMoves.map((move) => ({...move, to: {...move.to, wasMoved: true}})));
     }
 
     const downMoves = getMovesDown(piece, pieces);
     if(downMoves.length){
-        moves.push(...downMoves);
+        moves.push(...downMoves.map((move) => ({...move, to: {...move.to, wasMoved: true}})));
     }
 
     const leftMoves = getMovesLeft(piece, pieces);
     if(leftMoves.length){
-        moves.push(...leftMoves);
+        moves.push(...leftMoves.map((move) => ({...move, to: {...move.to, wasMoved: true}})));
     }
 
     const rightMoves = getMovesRight(piece, pieces);
     if(rightMoves.length){
-        moves.push(...rightMoves);
+        moves.push(...rightMoves.map((move) => ({...move, to: {...move.to, wasMoved: true}})));
     }
 
     return moves;

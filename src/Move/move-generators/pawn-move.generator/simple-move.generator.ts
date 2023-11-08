@@ -3,7 +3,9 @@ import {
     Move, findPieceFrom
 } from "../../move-generators";
 
-export const getSimpleMove = (piece: Piece, pieces: Piece[], increment: number): Move | void => {
+export const getSimpleMove = (piece: Piece, pieces: Piece[]): Move | void => {
+    const increment = piece.color === "white" ? 1 : -1;
+
     const firstStep = findPieceFrom({
         x: piece.position.x,
         y: piece.position.y + increment 

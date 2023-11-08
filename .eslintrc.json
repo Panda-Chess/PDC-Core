@@ -9,11 +9,13 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
+  "ignorePatterns": ["node_modules/", "dist/", "build/", "**/*test.ts"],
   "plugins": ["@typescript-eslint"],
   "rules": {
     "indent": ["error", 4],
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
+    "no-undef": "off",
     "object-curly-newline": [
       "error",
       {

@@ -3,7 +3,8 @@ import {
 } from "../../../Piece/piece-manager.service";
 import {Move} from "../../move-generators";
 
-export const getChangePawn = (piece: Piece, pieces: Piece[], increment: number): Move[] => {
+export const getChangePawn = (piece: Piece): Move[] => {
+    const increment = piece.color === "white" ? 1 : -1;
     const moves: Move[] = [];
 
     if ((piece.position.y === 7 && increment === 1) || (piece.position.y === 0 && increment === -1)) {

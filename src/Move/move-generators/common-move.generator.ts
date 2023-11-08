@@ -11,8 +11,8 @@ export const getCommonMoves = (piece: Piece, pieces: Piece[], displacement: Posi
 
     while(isPositionValid(nextPosition)){
         const nextPiecePosition = findPieceFrom(nextPosition, pieces);
-        if(nextPiecePosition && nextPiecePosition.color !== nextPiecePosition.color){
-            moves.push({from: nextPiecePosition, to: {...nextPiecePosition, position: nextPosition}});
+        if(nextPiecePosition && nextPiecePosition.color !== piece.color){
+            moves.push({from: piece, to: {...piece, position: nextPosition}});
             break;
         }
 

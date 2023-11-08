@@ -8,21 +8,21 @@ import {getSimpleMove} from "./simple-move.generator";
 export const generatePawnMoves = (piece: Piece, pieces: Piece[]): Move[] => {
     const moves: Move[] = [];
 
-    const doubleMove = getDoubleMove(piece, pieces, piece.color === "white" ? 1 : -1);
+    const doubleMove = getDoubleMove(piece, pieces);
     if (doubleMove) {
-        moves.push(doubleMove);
+        moves.push({...doubleMove, to: {...doubleMove.to, wasMoved: true}});
     }
 
-    const simpleMove = getSimpleMove(piece, pieces, piece.color === "white" ? 1 : -1);
+    const simpleMove = getSimpleMove(piece, pieces);
     if (simpleMove) {
-        moves.push(simpleMove);
+        moves.push({...simpleMove, to: {...simpleMove.to, wasMoved: true}});
     }
 
-    const attackMoves = getAttackMoves(piece, pieces, piece.color === "white" ? 1 : -1);
-    moves.push(...attackMoves);
+    const attackMoves = getAttackMoves(piece, pieces);
+    moves.push(...attackMoves.map((move) => ({...move, to: {...move.to, wasMoved: true}})));
 
-    const changePawn = getChangePawn(piece, pieces, piece.color === "white" ? 1 : -1);
-    moves.push(...changePawn);
+    const changePawn = getChangePawn(piece);
+    moves.push(...changePawn.map((move) => ({...move, to: {...move.to, wasMoved: true}})));
 
     return moves;
 };

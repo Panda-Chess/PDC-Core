@@ -3,7 +3,9 @@ import {
     Move, findPieceFrom
 } from "./../../move-generators";
 
-const getLeftAttack = (piece: Piece, pieces: Piece[], increment: number): Move | void => {
+const getLeftAttack = (piece: Piece, pieces: Piece[]): Move | void => {
+    const increment = piece.color === "white" ? 1 : -1;
+
     const leftAttack = findPieceFrom({
         x: piece.position.x - 1,
         y: piece.position.y + increment 
@@ -25,7 +27,9 @@ const getLeftAttack = (piece: Piece, pieces: Piece[], increment: number): Move |
     }
 };
 
-const getRightAttack = (piece: Piece, pieces: Piece[], increment: number): Move | void => {
+const getRightAttack = (piece: Piece, pieces: Piece[]): Move | void => {
+    const increment = piece.color === "white" ? 1 : -1;
+
     const rightAttack = findPieceFrom({
         x: piece.position.x + 1,
         y: piece.position.y + increment 
@@ -47,16 +51,16 @@ const getRightAttack = (piece: Piece, pieces: Piece[], increment: number): Move 
     }
 };
 
-export const getAttackMoves = (piece: Piece, pieces: Piece[], increment: number): Move[] => {
+export const getAttackMoves = (piece: Piece, pieces: Piece[]): Move[] => {
     const moves: Move[] = [];
 
-    const leftAttack = getLeftAttack(piece, pieces, increment);
+    const leftAttack = getLeftAttack(piece, pieces);
 
     if (leftAttack) {
         moves.push(leftAttack);
     }
 
-    const rightAttack = getRightAttack(piece, pieces, increment);
+    const rightAttack = getRightAttack(piece, pieces);
 
     if (rightAttack) {
         moves.push(rightAttack);
