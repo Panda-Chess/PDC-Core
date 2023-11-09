@@ -1,7 +1,7 @@
 import {
     Piece, PieceType
 } from "../../../Piece/piece-manager.service";
-import {Move} from "../../move-generators";
+import {Move} from "..";
 
 const eliminatedPieces = (pieces: Piece[], color: "white" | "black"): Piece[] => {
     const eliminated: Piece[] = [];

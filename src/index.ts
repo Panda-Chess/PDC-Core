@@ -1,4 +1,4 @@
-import {getMoves} from "./Move/move-generators";
+import {getMoves} from "./move/move-generators";
 import {
     createPieceManager
 } from "./Piece/piece-manager.service";

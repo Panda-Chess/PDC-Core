@@ -1,7 +1,7 @@
 import { Piece } from "../../../Piece/piece-manager.service";
 import {
     Move, findPieceFrom
-} from "../../move-generators";
+} from "..";
 
 export const getSimpleMove = (piece: Piece, pieces: Piece[]): Move | void => {
     const increment = piece.color === "white" ? 1 : -1;
