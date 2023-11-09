@@ -82,6 +82,61 @@ describe("generatePawnMoves", () => {
         expect(result).toEqual(expectedMoves);
     });
 
+    it("should generate change piece", () => {
+        const piece: Piece = {
+            pieceId: "1",
+            pieceType: PieceType.Pawn,
+            wasMoved: true,
+            color: "white",
+            position: { x: 7, y: 6 },
+        };
+
+        const eliminatedPieces: Piece[] = [
+            {
+                pieceId: "2",
+                pieceType: PieceType.Queen,
+                wasMoved: false,
+                color: "white",
+                position: { x: -1, y: -1 },
+            },
+            {
+                pieceId: "3",
+                pieceType: PieceType.Bishop,
+                wasMoved: false,
+                color: "white",
+                position: { x: -1, y: -1 },
+            },
+        ];
+
+        const pieces: Piece[] = [
+            piece,
+            ...eliminatedPieces,
+            {
+                pieceId: "4",
+                pieceType: PieceType.Pawn,
+                wasMoved: false,
+                color: "white",
+                position: { x: -1, y: -1 },
+            },
+            {
+                pieceId: "5",
+                pieceType: PieceType.Queen,
+                wasMoved: false,
+                color: "black",
+                position: { x: -1, y: -1 },
+            },
+        ];
+
+        const expectedMoves: Move[] = eliminatedPieces.map((eliminatedPiece) => ({
+            from: piece,
+            to: {...eliminatedPiece, position: { x: 7, y: 7 }, wasMoved: true},
+        }));
+
+        const result = generatePawnMoves(piece, pieces);
+
+        expect(result).toEqual(expectedMoves);
+    });
+
     it("should generate attack moves", () => {
         const piece: Piece = {
             pieceId: "1",

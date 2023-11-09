@@ -8,6 +8,9 @@ import {getSimpleMove} from "./simple-move.generator";
 export const generatePawnMoves = (piece: Piece, pieces: Piece[]): Move[] => {
     const moves: Move[] = [];
 
+    if (piece.position.x === -1 || piece.position.y === -1)
+        return moves;
+
     const doubleMove = getDoubleMove(piece, pieces);
     if (doubleMove) {
         moves.push({...doubleMove, to: {...doubleMove.to, wasMoved: true}});
@@ -21,7 +24,7 @@ export const generatePawnMoves = (piece: Piece, pieces: Piece[]): Move[] => {
     const attackMoves = getAttackMoves(piece, pieces);
     moves.push(...attackMoves.map((move) => ({...move, to: {...move.to, wasMoved: true}})));
 
-    const changePawn = getChangePawn(piece);
+    const changePawn = getChangePawn(piece, pieces);
     moves.push(...changePawn.map((move) => ({...move, to: {...move.to, wasMoved: true}})));
 
     return moves;

@@ -21,37 +21,71 @@ const getChessMoves = (piece: Piece, pieces: Piece[], pieceType: PieceType): boo
     return false;
 };
 
+const isQueenChess = (piece: Piece, pieces: Piece[]) => {
+    const queenMoves: Move[] = generateQueenMoves(piece, pieces);
+    return queenMoves.some((x) => {
+        return getChessMoves(x.to, pieces, PieceType.Queen);
+    });
+};
+
+const isPawnChess = (piece: Piece, pieces: Piece[]) => {
+    const pawnMoves: Move[] = getAttackMoves(piece, pieces);
+    return pawnMoves.some((x) => {
+        return getChessMoves(x.to, pieces, PieceType.Pawn);
+    });
+};
+
+const isRookChess = (piece: Piece, pieces: Piece[]) => {
+    const rookMoves: Move[] = generateRookMoves(piece, pieces);
+    return rookMoves.some((x) => {
+        return getChessMoves(x.to, pieces, PieceType.Rook);
+    });
+};
+
+const isBishopChess = (piece: Piece, pieces: Piece[]) => {
+    const bishopMoves: Move[] = generateBishopMoves(piece, pieces);
+    return bishopMoves.some((x) => {
+        return getChessMoves(x.to, pieces, PieceType.Bishop);
+    });
+};
+
+const isKnightChess = (piece: Piece, pieces: Piece[]) => {
+    const knightMoves: Move[] = generateKnightMoves(piece, pieces);
+    return knightMoves.some((x) => {
+        return getChessMoves(x.to, pieces, PieceType.Knight);
+    });
+};
+
+const isKingChess = (piece: Piece, pieces: Piece[]) => {
+    const kingMoves: Move[] = generateQueenMoves(piece, pieces);
+    return kingMoves.some((x) => {
+        return getChessMoves(x.to, pieces, PieceType.King);
+    });
+};
+
 export const isChess = (pieces: Piece[], color: "white" | "black") => {
     const piece = pieces.find((x) => x.pieceType === PieceType.King && x.color === color);
-    let isChess = false;
 
     if(!piece)
         return false;
 
-    const queenMoves: Move[] = generateQueenMoves(piece, pieces);
-    isChess = queenMoves.some((x) => {
-        return getChessMoves(x.to, pieces, PieceType.Queen);
-    });
+    if(isQueenChess(piece, pieces))
+        return true;
 
-    const pawnMoves: Move[] = getAttackMoves(piece, pieces);
-    isChess = pawnMoves.some((x) => {
-        return getChessMoves(x.to, pieces, PieceType.Pawn);
-    });
+    if(isPawnChess(piece, pieces))
+        return true;
 
-    const rookMoves: Move[] = generateRookMoves(piece, pieces);
-    isChess = rookMoves.some((x) => {
-        return getChessMoves(x.to, pieces, PieceType.Rook);
-    });
+    if(isRookChess(piece, pieces))
+        return true;
 
-    const bishopMoves: Move[] = generateBishopMoves(piece, pieces);
-    isChess = bishopMoves.some((x) => {
-        return getChessMoves(x.to, pieces, PieceType.Bishop);
-    });
+    if(isBishopChess(piece, pieces))
+        return true;
 
-    const knightMoves: Move[] = generateKnightMoves(piece, pieces);
-    isChess = knightMoves.some((x) => {
-        return getChessMoves(x.to, pieces, PieceType.Knight);
-    });
+    if(isKnightChess(piece, pieces))
+        return true;
 
-    return isChess;
+    if(isKingChess(piece, pieces))
+        return true;
+
+    return false;
 };

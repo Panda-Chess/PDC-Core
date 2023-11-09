@@ -8,6 +8,9 @@ import { getMovesUp } from "./up-move.generator";
 export const generateKnightMoves = (piece: Piece, pieces: Piece[]): Move[] =>{
     const moves: Move[] = [];
 
+    if(piece.position.x === -1 || piece.position.y === -1)
+        return moves;
+
     const upMoves = getMovesUp(piece, pieces);
     if(upMoves.length){
         moves.push(...upMoves.map((move) => ({...move, to: {...move.to, wasMoved: true}})));
