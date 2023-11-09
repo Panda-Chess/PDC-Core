@@ -22,7 +22,7 @@ describe("generateKingMoves", () => {
                 from: piece,
                 to: {
                     ...piece,
-                    position: { x: 1, y: 0 },
+                    position: { x: 0, y: 1 },
                     wasMoved: true,
                 },
             },
@@ -30,7 +30,7 @@ describe("generateKingMoves", () => {
                 from: piece,
                 to: {
                     ...piece,
-                    position: { x: 0, y: 1 },
+                    position: { x: 1, y: 0 },
                     wasMoved: true,
                 },
             },
