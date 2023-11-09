@@ -20,7 +20,7 @@ export const getCommonMoves = (piece: Piece, pieces: Piece[], displacement: Posi
             break;
         }
 
-        moves.push({from: piece, to: {...piece, position: nextPosition, wasMoved: true}});
+        moves.push({from: piece, to: {...piece, position: {...nextPosition}, wasMoved: true}});
 
         nextPosition.x += displacement.x;
         nextPosition.y += displacement.y;
