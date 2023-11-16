@@ -148,4 +148,61 @@ describe("MoveGenerators", () => {
 
         expect(moves).toEqual(expectedMoves);
     });
+
+        it("should make one move", () => {
+            const piece: Piece = {
+            pieceId: "1",
+            color: "white",
+            pieceType: PieceType.Pawn,
+            wasMoved: false,
+            position: {
+                x: 1,
+                y: 0,
+            },
+        };
+
+        const pieces: Piece[] = [
+            piece,
+            {
+                pieceId: "2",
+                color: "white",
+                pieceType: PieceType.King,
+                wasMoved: false,
+                position: {
+                    x: 0,
+                    y: 1,
+                },
+            },
+            {
+                pieceId: "3",
+                color: "black",
+                pieceType: PieceType.Queen,
+                wasMoved: false,
+                position: {
+                    x: 2,
+                    y: 1,
+                },
+            }
+        ];
+
+        const expectedMoves: Move[] = [
+            {
+                from: piece,
+                to: {
+                    pieceId: "1",
+                    color: "white",
+                    pieceType: PieceType.Pawn,
+                    wasMoved: true,
+                    position: {
+                        x: 1,
+                        y: 1,
+                    },
+                },
+            }
+        ];
+
+        const moves = getMoves(piece, pieces);
+
+        expect(moves).toEqual(expectedMoves);
+    });
 });
