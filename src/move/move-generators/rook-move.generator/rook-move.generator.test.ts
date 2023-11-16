@@ -1,5 +1,5 @@
 import { describe } from "@jest/globals";
-import { Piece, PieceType } from "../../../Piece/piece-manager.service";
+import { Piece, PieceType } from "../../../piece/piece-manager.service";
 import { generateRookMoves } from "./rook-move.generator";
 import { Move } from "..";
 

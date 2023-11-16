@@ -1,5 +1,5 @@
 import { Move } from "..";
-import { Piece } from "../../../Piece/piece-manager.service";
+import { Piece } from "../../../piece/piece-manager.service";
 import { diagonalMoves } from "./diagonal-move.generator";
 import { straightMoves } from "./straight-move.generator";
 

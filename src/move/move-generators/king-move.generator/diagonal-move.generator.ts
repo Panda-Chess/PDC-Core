@@ -1,5 +1,5 @@
 import { Move, findPieceFrom, isPositionValid } from "..";
-import { Piece } from "../../../Piece/piece-manager.service";
+import { Piece } from "../../../piece/piece-manager.service";
 
 const leftUpMoves = (piece: Piece, pieces: Piece[]): Move[] => {
     const moves: Move[] = [];

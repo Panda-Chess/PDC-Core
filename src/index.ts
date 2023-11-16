@@ -1,7 +1,7 @@
 import {getMoves} from "./move/move-generators";
 import {
     createPieceManager
-} from "./Piece/piece-manager.service";
+} from "./piece/piece-manager.service";
 
 const pieceManager = createPieceManager();
 

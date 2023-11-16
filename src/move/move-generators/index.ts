@@ -1,6 +1,7 @@
 import {
     Piece, PieceType, Position
-} from "../../Piece/piece-manager.service";
+} from "../../piece/piece-manager.service";
+import { makeMove } from "../move-maker";
 import { isChess } from "./chess-checker";
 import {generatePawnMoves} from "./pawn-move.generator/pawn-move.generator";
 import {generateRookMoves} from "./rook-move.generator";
@@ -49,6 +50,10 @@ export const getMoves = (piece: Piece, pieces: Piece[]): Move[] => {
         moves.push(...eliminateChessMoves(generateRookMoves(piece, pieces), pieces));
         break;
     }
+
+    moves.filter((move) => {
+        return !isChess(makeMove(move, pieces), move.from.color);
+    });
 
     return moves;
 };

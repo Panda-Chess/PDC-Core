@@ -1,6 +1,6 @@
 import {
     Piece, PieceType
-} from "../../../Piece/piece-manager.service";
+} from "../../../piece/piece-manager.service";
 import {Move} from "..";
 
 const eliminatedPieces = (pieces: Piece[], color: "white" | "black"): Piece[] => {

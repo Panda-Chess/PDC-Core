@@ -1,5 +1,5 @@
 import { Move } from "..";
-import { Piece } from "../../../Piece/piece-manager.service";
+import { Piece } from "../../../piece/piece-manager.service";
 import { getCommonMoves } from "../common-move.generator";
 
 export const generateBishopMoves = (piece: Piece, pieces: Piece[]): Move[] =>{

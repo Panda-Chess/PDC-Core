@@ -1,5 +1,5 @@
 import { Move } from "..";
-import { Piece } from "../../../Piece/piece-manager.service";
+import { Piece } from "../../../piece/piece-manager.service";
 import { generateBishopMoves } from "../bishop-move.generator";
 import { generateRookMoves } from "../rook-move.generator";
 

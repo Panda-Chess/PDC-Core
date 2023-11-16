@@ -1,4 +1,4 @@
-import { Piece } from "../../../Piece/piece-manager.service";
+import { Piece } from "../../../piece/piece-manager.service";
 import {
     Move, findPieceFrom
 } from "..";
