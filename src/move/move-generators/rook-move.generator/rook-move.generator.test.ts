@@ -1,7 +1,7 @@
 import { describe } from "@jest/globals";
 import { Piece, PieceType } from "../../../piece/piece-manager.service";
 import { generateRookMoves } from "./rook-move.generator";
-import { Move } from "..";
+import { Move } from "../../move-generators/move.generators";
 
 describe('RookMoveGenerator', () => {
     it('should generate no moves', () => {

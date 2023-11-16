@@ -1,5 +1,5 @@
 import {Piece} from "../../../piece/piece-manager.service";
-import {Move} from "..";
+import {Move} from "../../move-generators/move.generators";
 import {getAttackMoves} from "./attack-move.generator";
 import {getChangePawn} from "./change-move.generator";
 import {getDoubleMove} from "./double-move.generator";

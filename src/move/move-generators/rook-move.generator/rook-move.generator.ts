@@ -1,5 +1,5 @@
 import {Piece} from "../../../piece/piece-manager.service";
-import {Move} from "..";
+import {Move} from "../../move-generators/move.generators";
 import { getCommonMoves } from "../common-move.generator";
 
 export const generateRookMoves = (piece: Piece, pieces: Piece[]): Move[] => {

@@ -1,4 +1,4 @@
-import { Move } from "..";
+import { Move } from "../../move-generators/move.generators";
 import { Piece } from "../../../piece/piece-manager.service";
 import { generateBishopMoves } from "../bishop-move.generator";
 import { generateRookMoves } from "../rook-move.generator";

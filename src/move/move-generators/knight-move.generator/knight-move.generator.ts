@@ -1,4 +1,4 @@
-import { Move } from "..";
+import { Move } from "../../move-generators/move.generators";
 import { Piece } from "../../../piece/piece-manager.service";
 import { getMovesDown } from "./down-move.generator";
 import { getMovesLeft } from "./left-move.generator";
