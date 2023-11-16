@@ -1,13 +1,4 @@
-import {getMoves} from "./move/move-generators";
-import {
-    createPieceManager
-} from "./piece/piece-manager.service";
+export {generatePieceSet} from "./piece/piece-set-generator.service";
+export {Piece, PieceType, Position} from "./piece/piece-manager.service";
 
-const pieceManager = createPieceManager();
-
-const pieces = pieceManager
-    .getPieces();
-
-for (const piece of pieces) {
-    console.log(getMoves(piece, pieces));
-}
+export {Move, getMoves} from "./move/move-generators/move.generators";

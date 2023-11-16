@@ -1,5 +1,3 @@
-import {generatePieceSet} from "./piece-set-generator.service";
-
 export enum PieceType {
   Pawn = "Pawn",
   Rook = "Rook",
@@ -21,13 +19,3 @@ export interface Piece {
   position: Position;
   wasMoved: boolean;
 }
-
-export const createPieceManager = () => {
-    const pieces: Piece[] = generatePieceSet();
-
-    const getPieces = () => {
-        return pieces;
-    };
-
-    return {getPieces,};
-};
