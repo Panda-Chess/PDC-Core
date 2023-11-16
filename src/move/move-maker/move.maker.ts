@@ -1,5 +1,5 @@
 import { Piece } from "../../piece/piece-manager.service";
-import { Move, findPieceFrom } from "../move-generators";
+import { Move, findPieceFrom } from "../move-generators/move.generators";
 
 export const makeMove = (move: Move, pieces: Piece[]): Piece[] => {
     let newPieces = pieces;
