@@ -1,6 +1,6 @@
 import { describe } from "@jest/globals";
 import { Piece, PieceType } from "../../../piece/piece-manager.service";
-import { Move } from "..";
+import { Move } from "../../move-generators/move.generators";
 import { generateKnightMoves } from "./knight-move.generator";
 
 describe("generateKnightMoves", () => {

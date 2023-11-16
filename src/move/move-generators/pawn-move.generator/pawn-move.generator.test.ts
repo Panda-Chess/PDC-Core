@@ -1,5 +1,5 @@
 import { Piece, PieceType } from "../../../piece/piece-manager.service";
-import { Move } from "..";
+import { Move } from "../../move-generators/move.generators";
 import { generatePawnMoves } from "./pawn-move.generator";
 import {describe, it, expect} from "@jest/globals";
 

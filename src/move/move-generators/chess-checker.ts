@@ -1,4 +1,4 @@
-import { Move } from ".";
+import { Move } from "../move-generators/move.generators";
 import { Piece, PieceType } from "../../piece/piece-manager.service";
 import { generateBishopMoves } from "./bishop-move.generator";
 import { generateKnightMoves } from "./knight-move.generator";
