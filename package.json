@@ -16,7 +16,7 @@
     "push": "yarn lint && git add . && git-cz && git pull && git push",
     "semantic-release": "semantic-release",
     "test": "jest --detectOpenHandles",
-    "lint": "eslint ./src/ --ext .ts --fix"
+    "lint": "eslint ./src/ --ext .tsx --ext .ts --fix"
   },
   "author": "",
   "license": "ISC",
