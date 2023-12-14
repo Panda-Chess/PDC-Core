@@ -2,8 +2,12 @@ import {
     Piece, PieceType, Position
 } from "../../piece/piece-manager.service";
 import { makeMove } from "../move-maker";
+import { generateBishopMoves } from "./bishop-move.generator";
 import { isChess } from "./chess-checker";
+import { generateKingMoves } from "./king-move.generator/king-move.generator";
+import { generateKnightMoves } from "./knight-move.generator";
 import {generatePawnMoves} from "./pawn-move.generator/pawn-move.generator";
+import { generateQueenMoves } from "./queen-move.generator";
 import {generateRookMoves} from "./rook-move.generator";
 
 export interface Move {
@@ -38,16 +42,16 @@ export const getMoves = (piece: Piece, pieces: Piece[]): Move[] => {
         moves.push(...eliminateChessMoves(generateRookMoves(piece, pieces), pieces));
         break;
     case PieceType.Knight:
-        moves.push(...eliminateChessMoves(generateRookMoves(piece, pieces), pieces));
+        moves.push(...eliminateChessMoves(generateKnightMoves(piece, pieces), pieces));
         break;
     case PieceType.Bishop:
-        moves.push(...eliminateChessMoves(generateRookMoves(piece, pieces), pieces));
+        moves.push(...eliminateChessMoves(generateBishopMoves(piece, pieces), pieces));
         break;
     case PieceType.Queen:
-        moves.push(...eliminateChessMoves(generateRookMoves(piece, pieces), pieces));
+        moves.push(...eliminateChessMoves(generateQueenMoves(piece, pieces), pieces));
         break;
     case PieceType.King:
-        moves.push(...eliminateChessMoves(generateRookMoves(piece, pieces), pieces));
+        moves.push(...eliminateChessMoves(generateKingMoves(piece, pieces), pieces));
         break;
     }
 
