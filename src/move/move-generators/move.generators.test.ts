@@ -149,7 +149,7 @@ describe("MoveGenerators", () => {
         expect(moves).toEqual(expectedMoves);
     });
 
-        it("should make one move", () => {
+    it("should make one move", () => {
             const piece: Piece = {
             pieceId: "1",
             color: "white",
@@ -179,7 +179,7 @@ describe("MoveGenerators", () => {
                 pieceType: PieceType.Queen,
                 wasMoved: false,
                 position: {
-                    x: 2,
+                    x: 3,
                     y: 1,
                 },
             }
@@ -205,4 +205,61 @@ describe("MoveGenerators", () => {
 
         expect(moves).toEqual(expectedMoves);
     });
+
+    it("should generate attak move", ()=>{
+        const piece: Piece = {
+            pieceId: "1",
+            color: "white",
+            pieceType: PieceType.Queen,
+            wasMoved: false,
+            position: {
+                x: 3,
+                y: 0
+            }
+        }
+
+        const pieces: Piece[] = [
+            piece,
+            {
+                pieceId: "2",
+                color: "white",
+                pieceType: PieceType.King,
+                wasMoved: true,
+                position: {
+                    x: 5,
+                    y: 1
+                }
+            },
+            {
+                pieceId: "3",
+                color: "black",
+                pieceType: PieceType.Queen,
+                wasMoved: true,
+                position: {
+                    x: 4,
+                    y: 1
+                }
+            }
+        ];
+
+        const expectedMoves: Move[] = [
+            {
+                from: piece,
+                to: {
+                    pieceId: "1",
+                    color: "white",
+                    pieceType: PieceType.Queen,
+                    wasMoved: true,
+                    position: {
+                        x: 4,
+                        y: 1
+                    }
+                }
+            }
+        ]
+
+        const moves = getMoves(piece, pieces);
+
+        expect(moves).toEqual(expectedMoves);
+    })
 });

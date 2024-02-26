@@ -25,7 +25,7 @@ export const isPositionValid = (position: Position): boolean => {
 
 const eliminateChessMoves = (moves: Move[], pieces: Piece[]): Move[] => {
     moves = moves.filter((move) => {
-        return !isChess([...pieces.filter(x=>x.pieceId !== move.from.pieceId), move.to], move.from.color);
+        return !isChess(makeMove(move, pieces), move.from.color);
     });
 
     return moves;
