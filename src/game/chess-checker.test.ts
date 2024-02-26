@@ -1,5 +1,5 @@
 import { describe } from "@jest/globals";
-import { Piece, PieceType } from "../../piece/piece-manager.service";
+import { Piece, PieceType } from "../piece/piece-manager.service";
 import { isChess } from "./chess-checker";
 
 describe('ChessChecker', () => {

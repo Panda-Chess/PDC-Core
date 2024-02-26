@@ -3,7 +3,7 @@ import {
 } from "../../piece/piece-manager.service";
 import { makeMove } from "../move-maker";
 import { generateBishopMoves } from "./bishop-move.generator";
-import { isChess } from "./chess-checker";
+import { isChess } from "../../game/chess-checker";
 import { generateKingMoves } from "./king-move.generator/king-move.generator";
 import { generateKnightMoves } from "./knight-move.generator";
 import {generatePawnMoves} from "./pawn-move.generator/pawn-move.generator";

@@ -1,10 +1,10 @@
-import { Move } from "../move-generators/move.generators";
-import { Piece, PieceType } from "../../piece/piece-manager.service";
-import { generateBishopMoves } from "./bishop-move.generator";
-import { generateKnightMoves } from "./knight-move.generator";
-import { getAttackMoves } from "./pawn-move.generator/attack-move.generator";
-import { generateQueenMoves } from "./queen-move.generator";
-import { generateRookMoves } from "./rook-move.generator";
+import { Move } from "../move/move-generators/move.generators";
+import { Piece, PieceType } from "../piece/piece-manager.service";
+import { generateBishopMoves } from "../move/move-generators/bishop-move.generator";
+import { generateKnightMoves } from "../move/move-generators/knight-move.generator";
+import { getAttackMoves } from "../move/move-generators/pawn-move.generator/attack-move.generator";
+import { generateQueenMoves } from "../move/move-generators/queen-move.generator";
+import { generateRookMoves } from "../move/move-generators/rook-move.generator";
 
 const getChessMoves = (piece: Piece, pieces: Piece[], pieceType: PieceType): boolean => {
     const atacator = pieces.find((y) => y.position.x === piece.position.x && y.position.y === piece.position.y);
