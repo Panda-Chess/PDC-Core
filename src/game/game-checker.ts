@@ -9,15 +9,17 @@ export enum GameStates {
     Draw = "Draw",
 }
 
-export const checkGameState = (pieces: Piece[], color: "white" | "black"): GameStates => {
-    const playerCanMove = canMove(pieces, color);
-
-    if(isChess(pieces, color) && !playerCanMove){
-        return color === "white" ? GameStates.BlackWin : GameStates.WhiteWin;
+export const checkGameState = (pieces: Piece[]): GameStates => {
+    if(isChess(pieces, "white")){
+        if(!canMove(pieces, "white")){
+            return GameStates.BlackWin;
+        }
     }
 
-    if(!playerCanMove){
-        return GameStates.Draw;
+    if(isChess(pieces, "black")){
+        if(!canMove(pieces, "black")){
+            return GameStates.WhiteWin;
+        }
     }
 
     return GameStates.InProgress;
