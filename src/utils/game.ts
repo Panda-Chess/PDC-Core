@@ -4,4 +4,5 @@ import { UserInGame } from "./userInGame";
 export type Game = {
     users: UserInGame[];
     gamePieces: Piece[]; 
+    gameType: "casual" | "competitive";
 };
