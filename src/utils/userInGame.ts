@@ -5,4 +5,5 @@ export type UserInGame = {
     user: User;
     color: "white" | "black";
     gamePoints: number;
+    status: "online" | "offline";
 }
