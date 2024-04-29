@@ -6,4 +6,6 @@ export {makeMove} from "./move/move-maker/move.maker";
 
 export {checkGameState, GameStates} from "./game/game-checker";
 
-export {User, UserInGame, Game} from "./utils";
+export {
+    User, UserInGame, Game, UserStatus
+} from "./utils";

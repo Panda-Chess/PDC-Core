@@ -1,4 +1,4 @@
-import { PlayerStatus } from "./playerStatus";
+import { UserStatus } from "./userStatus";
 import { User } from "./user";
 
 export type UserInGame = {
@@ -6,5 +6,5 @@ export type UserInGame = {
     user: User;
     color: "white" | "black";
     gamePoints: number;
-    status: PlayerStatus;
+    status: UserStatus;
 }
