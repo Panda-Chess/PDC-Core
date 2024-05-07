@@ -7,5 +7,7 @@ export {makeMove} from "./move/move-maker/move.maker";
 export {checkGameState, GameStates} from "./game/game-checker";
 
 export {
-    User, UserInGame, Game, UserStatus, Player
+    User, UserInGame, Game, UserStatus
 } from "./utils";
+
+export {GameDTO, PlayerDTO} from "./DTOs";
