@@ -1,4 +1,4 @@
-export type Player = {
+export type PlayerDTO = {
     name: string;
     wins?: number;
     losses?: number;
