@@ -3,6 +3,7 @@ export type User = {
     name: string;
     email: string;
     password: string;
+    status: "online" | "offline";
     wins: number;
     losses: number;
     draws: number;
