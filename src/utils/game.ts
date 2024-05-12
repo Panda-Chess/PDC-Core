@@ -6,4 +6,5 @@ export type Game = {
     users: UserInGame[];
     gamePieces: Piece[]; 
     gameType: "casual" | "competitive";
+    currentColor: "white" | "black";
 };

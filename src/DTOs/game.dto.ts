@@ -6,4 +6,5 @@ export type GameDTO = {
     opponentPlayer: PlayerDTO;
     gamePieces: Piece[];
     gameType: "casual" | "competitive";
+    currentColor: "white" | "black";
 };
