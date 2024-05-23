@@ -9,3 +9,5 @@ export { checkGameState, GameStates } from "./game/game-checker";
 export {
     User, UserInGame, Game, UserStatus
 } from "./utils";
+
+export * from "./communication";
