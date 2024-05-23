@@ -1,13 +1,11 @@
-export {generatePieceSet} from "./piece/piece-set-generator.service";
-export {Piece, PieceType, Position} from "./piece/piece-manager.service";
+export { generatePieceSet } from "./piece/piece-set-generator.service";
+export { Piece, PieceType, Position } from "./piece/piece-manager.service";
 
-export {Move, getMoves} from "./move/move-generators/move.generators";
-export {makeMove} from "./move/move-maker/move.maker";
+export { Move, getMoves } from "./move/move-generators/move.generators";
+export { makeMove } from "./move/move-maker/move.maker";
 
-export {checkGameState, GameStates} from "./game/game-checker";
+export { checkGameState, GameStates } from "./game/game-checker";
 
 export {
     User, UserInGame, Game, UserStatus
 } from "./utils";
-
-export {GameDTO, PlayerDTO} from "./DTOs";
