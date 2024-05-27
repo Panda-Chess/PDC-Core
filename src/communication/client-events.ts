@@ -1,4 +1,4 @@
-import { Game, User } from "../utils";
+import { Game, WantsToPlay } from "../utils";
 import { GameRequestDto } from "./GameRequest.dto";
 
 export enum ClientEvents {
@@ -15,9 +15,9 @@ export enum ClientEvents {
 
 export type ClientConnectEvent = () => void;
 export type ClientDisconnectEvent = () => void;
-export type ClientConnectedUsersEvent = (users: User[]) => void;
-export type ClientUserConnectedEvent = (user: User) => void;
-export type ClientUserDisconnectedEvent = (user: User) => void;
+export type ClientConnectedUsersEvent = (wantsToPlay: WantsToPlay[]) => void;
+export type ClientUserConnectedEvent = (wantsToPlay: WantsToPlay) => void;
+export type ClientUserDisconnectedEvent = (wantsToPlay: WantsToPlay) => void;
 export type ClientOpponentDisconnectEvent = () => void;
 export type ClientGameStartEvent = (game: Game) => void;
 export type ClientConnectErrorEvent = () => void;
