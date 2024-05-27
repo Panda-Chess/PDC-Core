@@ -1,5 +1,7 @@
+import { GameTypes } from "../utils/gameTypes";
+
 export type GameRequestDto = {
-    initiatorId: string;
-    receptorId: string;
-    gameType: "casual" | "competitive"
+    currentPlayer: string;
+    opponentPlayer: string;
+    gameType: GameTypes;
 };
