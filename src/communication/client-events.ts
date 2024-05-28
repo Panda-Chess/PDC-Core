@@ -9,6 +9,7 @@ export enum ClientEvents {
     UserDisconnected = "client:user-disconnected",
     OpponentDisconnect = "client:opponent-disconnect",
     GameStart = "client:game-start",
+    GameContinue = "client:game-continue",
     ConnectError = "connect_error",
     GameRequest = "client:game-request",
 }
@@ -22,3 +23,4 @@ export type ClientOpponentDisconnectEvent = () => void;
 export type ClientGameStartEvent = (game: Game) => void;
 export type ClientConnectErrorEvent = () => void;
 export type ClientGameRequestEvent = (gameRequestDTO: GameRequestDto) => void;
+export type ClientGameContinueEvent = (gameRequestDTO: GameRequestDto) => void;
