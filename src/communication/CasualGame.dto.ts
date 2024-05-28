@@ -1,4 +1,6 @@
+import { User } from "../utils";
+
 export type CasualGameDTO = {
-    initiatorId: string;
-    receptorId: string;
+    initiator: User;
+    receptor: User;
 };
