@@ -14,7 +14,9 @@ export enum ServerEvents {
 
 export type ServerConnectionEvent = (socket: Socket) => void;
 export type ServerDisconnectEvent = () => void;
+
 export type ServerGameRequestEvent = (gameRequestDTO: GameRequestDto) => void;
 export type ServerCasualGameEvent = (casualGameDTO: CasualGameDTO) => void;
 export type ServerMoveEvent = (move: Move) => void;
+
 export type ServerGameContinueEvent = (gameRequestDTO: GameRequestDto) => void;
