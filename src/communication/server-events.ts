@@ -8,7 +8,7 @@ export enum ServerEvents {
     Connection = "connection",
     Disconnect = "disconnect",
     GameRequest = "server:game-request",
-    CasualGame = "server:casual-game",
+    GameCreate = "server:game-create",
     GameContinue = "server:game-continue",
     Move = "server:move",
 }
